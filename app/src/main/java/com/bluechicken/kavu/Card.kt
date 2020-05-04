@@ -1,9 +1,9 @@
 package com.bluechicken.kavu
 
 data class Card(
-    var multiverseId: Int,
-    var name: String,
-    var type: String,
+    var multiverseId: Int?,
+    var name: String?,
+    var type: String?,
     var imageUrl: String?,
     var imageCropUrl: String?
 ) {

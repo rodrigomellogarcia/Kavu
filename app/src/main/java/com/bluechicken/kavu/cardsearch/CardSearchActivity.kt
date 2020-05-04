@@ -2,6 +2,9 @@ package com.bluechicken.kavu.cardsearch
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bluechicken.kavu.Card
@@ -17,15 +20,31 @@ class CardSearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_card_search)
 
-        with(rv_card_search_cards) {
-            layoutManager = LinearLayoutManager(this@CardSearchActivity, RecyclerView.VERTICAL,false)
-            setHasFixedSize(true)
-            adapter = CardAdapter(fakeCards())
-        }
+        updateRecyclerView(listOf())
 
+        val viewModel : CardSearchViewModel = ViewModelProvider(this).get(CardSearchViewModel::class.java)
+        viewModel.searchedCards.observe(this, Observer {
+            it?.let {
+                updateRecyclerView(it)
+            }
+        })
+
+        viewModel.getCards()
 
         //addFragmentTo(R.id.content_card_search, createFragment())
         //setSupportActionBar(toolbar_card_search)
+
+    }
+
+    private fun updateRecyclerView(listOfCards : List<Card>) {
+        with(rv_card_search_cards) {
+            layoutManager = LinearLayoutManager(this@CardSearchActivity, RecyclerView.VERTICAL,false)
+            setHasFixedSize(true)
+            adapter = CardAdapter(listOfCards)
+        }
+    }
+
+    fun fakeSearch(view : View) {
 
     }
 
@@ -40,9 +59,5 @@ class CardSearchActivity : AppCompatActivity() {
 //        return CardSearchFragment.newInstance()
 //    }
 
-    fun fakeCards() : List<Card> {
-        return listOf(
-            Card(-1,"Fake card", "Artifact - Fake Card", null, null)
-        )
-    }
+
 }
