@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Kavu</string>
+
+    <string name="main_search">Pesquisar Card</string>
+    <string name="main_binder">Minha Pasta</string>
+
+    <string name="search_hint">Busque por um card.</string>
+    <string name="search_button">Pesquisar</string>
+
+    <string name="details_card_sample_text">Flying, vigilance, indestructible\nOther permanents you control have indestructible.</string>
+    <string name="details_see_on_gatherer">Ver card no Gatherer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
