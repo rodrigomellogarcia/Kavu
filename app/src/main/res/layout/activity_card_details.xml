@@ -17,6 +17,13 @@
             android:layout_height="500dp"
             app:layout_constraintTop_toTopOf="parent"/>
 
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/car_details_card_image"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:autoPlay="false"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <View
             android:id="@+id/gradient_details"
             android:layout_width="match_parent"
@@ -24,49 +31,75 @@
             app:layout_constraintBottom_toBottomOf="@+id/iv_details_card_image"
             android:background="@drawable/gradient_vertical"/>
 
-        <TextView
-            android:id="@+id/tv_details_card_name"
-            style="@style/BoldCardTitleTextView"
+        <LinearLayout
+            android:id="@+id/layout_details_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/gradient_details"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:textSize="32sp"
-            tools:text="Avacyn, Angel of Hope"/>
 
-        <TextView
-            android:id="@+id/tv_details_card_type"
-            style="@style/BoldCardContentsTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_details_card_name"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"
-            tools:text="Creature - Angel"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteX="8dp">
 
-        <TextView
-            android:id="@+id/tv_details_card_text"
-            style="@style/BoldCardContentsTextView"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_details_card_type"
-            app:layout_constraintLeft_toLeftOf="@id/tv_details_card_type"
-            app:layout_constraintRight_toRightOf="@id/tv_details_card_type"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            tools:text="@string/details_card_sample_text"/>
+            <TextView
+                android:id="@+id/tv_details_card_name"
+                style="@style/BoldCardTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                app:layout_constraintTop_toBottomOf="@id/gradient_details"
+                tools:text="Avacyn, Angel of Hope" />
+
+            <TextView
+                android:id="@+id/tv_details_card_type"
+                style="@style/BoldCardContentsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                tools:text="Creature - Angel" />
+
+            <TextView
+                android:id="@+id/tv_details_card_text"
+                style="@style/BoldCardContentsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                tools:text="@string/details_card_sample_text" />
+
+            <TextView
+                android:id="@+id/tv_details_extra_card_name"
+                style="@style/BoldCardTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                tools:text="Avacyn, Angel of Hope" />
+
+            <TextView
+                android:id="@+id/tv_details_extra_card_type"
+                style="@style/BoldCardContentsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                tools:text="Creature - Angel" />
+
+            <TextView
+                android:id="@+id/tv_details_extra_card_text"
+                style="@style/BoldCardContentsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                tools:text="@string/details_card_sample_text" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/button_details_gatherer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_details_card_text"
+            app:layout_constraintTop_toBottomOf="@id/layout_details_content"
             android:layout_margin="8dp"
             style="@style/Button"
             android:textAlignment="center"
@@ -74,43 +107,6 @@
             android:text="@string/details_see_on_gatherer"
             android:onClick="seeOnGatherer"/>
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-<!--
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-
-
-
-
-
-
-
-               android:onClick="seeOnGatherer"
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
-
-    -->
-
-
-
 
 </ScrollView>
