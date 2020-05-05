@@ -25,4 +25,6 @@ class MainActivity : AppCompatActivity() {
         //startActivity(binderIntent)
     }
 
+    fun searchCardsByName(view: View) {}
+
 }

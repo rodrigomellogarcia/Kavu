@@ -30,7 +30,6 @@ class CardSearchFragment : Fragment() {
 
         mRecyclerView.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         mRecyclerView.setHasFixedSize(false)
-        mRecyclerView.adapter = CardAdapter(fakeCards())
 
 
 //        with(rv_card_search_cards) {
@@ -42,13 +41,6 @@ class CardSearchFragment : Fragment() {
         // Inflate the layout for this fragment
         return rootView
     }
-
-    fun fakeCards() : List<Card> {
-        return listOf(
-            Card(-1,"Fake card", "Artifact - Fake Card", null, null)
-        )
-    }
-
 
 
     companion object {

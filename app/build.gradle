@@ -24,7 +24,7 @@ android {
         }
     }
 
-    dataBinding{
+    dataBinding {
         enabled true
     }
 
@@ -32,7 +32,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
 
 
 }
@@ -62,4 +61,6 @@ dependencies {
     implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
 
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
+
+    implementation 'com.synnapps:carouselview:0.1.5'
 }

@@ -23,7 +23,7 @@ data class Data(
     val highres_image: Boolean,
     val id: String,
     val illustration_id: String,
-    val image_uris: ImageUrisX,
+    val image_uris: ImageUris,
     val lang: String,
     val layout: String,
     val legalities: Legalities,
