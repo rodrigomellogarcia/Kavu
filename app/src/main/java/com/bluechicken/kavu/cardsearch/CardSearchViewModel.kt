@@ -42,6 +42,7 @@ class CardSearchViewModel : ViewModel() {
                                         multiverseId = null,
                                         type = face.type_line,
                                         oracleText = face.oracle_text,
+                                        // TODO: alguns cards não tem imageUri (ex: Collision // Colossus.) Tratar imagens
                                         imageUrl = face.image_uris.border_crop,
                                         imageCropUrl = face.image_uris.art_crop,
                                         faces = null

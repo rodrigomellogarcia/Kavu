@@ -6,12 +6,18 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.bluechicken.kavu.R
 import com.bluechicken.kavu.cardsearch.CardSearchActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        card_main_search.setOnClickListener {
+            goToSearch(it)
+        }
+
     }
 
     fun goToSearch(view: View?) {

@@ -63,4 +63,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
 
     implementation 'com.synnapps:carouselview:0.1.5'
+
+    implementation 'org.jsoup:jsoup:1.13.1'
 }

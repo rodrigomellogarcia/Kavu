@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Kavu</string>
 
-    <string name="main_search">Pesquisar Card</string>
+    <string name="main_search_title">Pesquisar por um card</string>
+    <string name="main_search_description">Pesquise por qualquer card no multiverso.</string>
+
     <string name="main_binder">Minha Pasta</string>
 
     <string name="search_hint">Busque por um card.</string>

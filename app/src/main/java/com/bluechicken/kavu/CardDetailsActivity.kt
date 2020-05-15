@@ -8,6 +8,8 @@ import android.util.Log
 import android.view.View
 import android.view.View.GONE
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.bluechicken.kavu.carddetails.CardDetailsViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_card_details.*
 import kotlinx.android.synthetic.main.card_list_item.view.*
@@ -15,6 +17,8 @@ import kotlinx.android.synthetic.main.card_list_item.view.*
 class CardDetailsActivity : AppCompatActivity() {
 
     lateinit var cardOnSpotlight : Card
+
+    lateinit var viewModel : CardDetailsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +29,10 @@ class CardDetailsActivity : AppCompatActivity() {
         cardOnSpotlight = intent.getParcelableExtra<Card>("card")
 
         bind(cardOnSpotlight);
+
+        viewModel = ViewModelProvider(this).get(CardDetailsViewModel::class.java)
+        viewModel
+        viewModel.getLigaPrices()
 
     }
 
@@ -66,6 +74,8 @@ class CardDetailsActivity : AppCompatActivity() {
                 tv_details_card_type.text = card.type
                 tv_details_card_text.text = card.oracleText
 
+                cardview_details_extra_card.visibility = GONE
+
                 tv_details_extra_card_name.visibility = GONE
                 tv_details_extra_card_type.visibility = GONE
                 tv_details_extra_card_text.visibility = GONE
@@ -74,6 +84,8 @@ class CardDetailsActivity : AppCompatActivity() {
                 car_details_card_image.visibility = View.INVISIBLE
                 iv_details_card_image.visibility = View.VISIBLE
                 Picasso.get().load(Card.cardBackUrl).into(iv_details_card_image)
+
+                cardview_details_extra_card.visibility = GONE
 
                 tv_details_extra_card_name.visibility = GONE
                 tv_details_extra_card_type.visibility = GONE

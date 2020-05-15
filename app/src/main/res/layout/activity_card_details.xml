@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="500dp"
             app:autoPlay="false"
+            app:indicatorVisibility="gone"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <View
@@ -38,68 +39,131 @@
             android:layout_margin="8dp"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/gradient_details"
+            app:layout_constraintLeft_toLeftOf="parent">
 
-            app:layout_constraintLeft_toLeftOf="parent"
-            tools:layout_editor_absoluteX="8dp">
-
-            <TextView
-                android:id="@+id/tv_details_card_name"
-                style="@style/BoldCardTitleTextView"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_details_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="32sp"
-                app:layout_constraintTop_toBottomOf="@id/gradient_details"
-                tools:text="Avacyn, Angel of Hope" />
+                android:layout_marginBottom="8dp"
+                style="@style/BoldCardView">
 
-            <TextView
-                android:id="@+id/tv_details_card_type"
-                style="@style/BoldCardContentsTextView"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_details_card_name"
+                        style="@style/BoldCardTitleTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="32sp"
+                        app:layout_constraintTop_toBottomOf="@id/gradient_details"
+                        tools:text="Avacyn, Angel of Hope" />
+
+                    <TextView
+                        android:id="@+id/tv_details_card_type"
+                        style="@style/BoldCardContentsTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        tools:text="Creature - Angel" />
+
+                    <TextView
+                        android:id="@+id/tv_details_card_text"
+                        style="@style/BoldCardContentsTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        tools:text="@string/details_card_sample_text" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_details_extra_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                tools:text="Creature - Angel" />
+                style="@style/BoldCardView">
 
-            <TextView
-                android:id="@+id/tv_details_card_text"
-                style="@style/BoldCardContentsTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
-                tools:text="@string/details_card_sample_text" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_details_extra_card_name"
-                style="@style/BoldCardTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="32sp"
-                tools:text="Avacyn, Angel of Hope" />
+                    <TextView
+                        android:id="@+id/tv_details_extra_card_name"
+                        style="@style/BoldCardTitleTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="32sp"
+                        tools:text="Avacyn, Angel of Hope" />
 
-            <TextView
-                android:id="@+id/tv_details_extra_card_type"
-                style="@style/BoldCardContentsTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                tools:text="Creature - Angel" />
+                    <TextView
+                        android:id="@+id/tv_details_extra_card_type"
+                        style="@style/BoldCardContentsTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        tools:text="Creature - Angel" />
 
-            <TextView
-                android:id="@+id/tv_details_extra_card_text"
-                style="@style/BoldCardContentsTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
-                tools:text="@string/details_card_sample_text" />
+                    <TextView
+                        android:id="@+id/tv_details_extra_card_text"
+                        style="@style/BoldCardContentsTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        tools:text="@string/details_card_sample_text" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_details_price_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_details_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            style="@style/BoldCardTitleTextView"
+            android:text="Preços"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/tv_details_price_liga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_details_price_title"
+            app:layout_constraintLeft_toLeftOf="@id/tv_details_price_title"
+            style="@style/BoldCardContentsTextView"
+            android:text="LigaMagic"
+            tools:text="LigaMagic" />
+
+        <TextView
+            android:id="@+id/tv_price_liga_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_details_price_title"
+            android:layout_marginRight="16dp"
+            style="@style/BoldCardContentsTextView"
+            tools:text="R$200,00"/>
 
         <Button
             android:id="@+id/button_details_gatherer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/layout_details_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_details_price_liga"
             android:layout_margin="8dp"
             style="@style/Button"
             android:textAlignment="center"
