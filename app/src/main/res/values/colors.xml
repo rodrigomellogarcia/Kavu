@@ -10,4 +10,9 @@
     <color name="boldBackground">#24252E</color>
     <color name="boldCardBackground">#3A3A47</color>
     <color name="boldText">#F0F0F5</color>
+
+    <color name="color_price_min">#9DE695</color>
+    <color name="color_price_avg">#FCCE74</color>
+    <color name="color_price_max">#FF888B</color>
+
 </resources>

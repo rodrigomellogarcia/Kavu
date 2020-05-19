@@ -35,6 +35,15 @@ class CardDetailsRepository {
         LigaPricesAsyncTask().execute()
     }
 
+    fun getAllPrices2() : List<Double?> {
+        var newPrices : ArrayList<Double?> = ArrayList(3)
+        newPrices.add(getPrice(PRICE_MIN))
+        newPrices.add(getPrice(PRICE_AVG))
+        newPrices.add(getPrice(PRICE_MAX))
+
+        return newPrices
+    }
+
 
 
     internal inner class LigaPricesAsyncTask : AsyncTask<Void, Void , List<Double?>>() {

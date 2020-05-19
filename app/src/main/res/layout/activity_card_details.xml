@@ -28,7 +28,7 @@
         <View
             android:id="@+id/gradient_details"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_details_card_image"
             android:background="@drawable/gradient_vertical"/>
 
@@ -146,8 +146,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_details_price_title"
             app:layout_constraintLeft_toLeftOf="@id/tv_details_price_title"
             style="@style/BoldCardContentsTextView"
-            android:text="LigaMagic"
-            tools:text="LigaMagic" />
+            android:text="@string/price_source_ligamagic"/>
 
         <TextView
             android:id="@+id/tv_price_liga_max"
@@ -157,7 +156,30 @@
             app:layout_constraintTop_toBottomOf="@id/tv_details_price_title"
             android:layout_marginRight="16dp"
             style="@style/BoldCardContentsTextView"
+            android:textColor="@color/color_price_max"
             tools:text="R$200,00"/>
+
+        <TextView
+            android:id="@+id/tv_price_liga_avg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@id/tv_price_liga_max"
+            app:layout_constraintTop_toBottomOf="@id/tv_details_price_title"
+            android:layout_marginRight="16dp"
+            style="@style/BoldCardContentsTextView"
+            android:textColor="@color/color_price_avg"
+            tools:text="R$20,00"/>
+
+        <TextView
+            android:id="@+id/tv_price_liga_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@id/tv_price_liga_avg"
+            app:layout_constraintTop_toBottomOf="@id/tv_details_price_title"
+            android:layout_marginRight="16dp"
+            style="@style/BoldCardContentsTextView"
+            android:textColor="@color/color_price_min"
+            tools:text="R$2,00"/>
 
         <Button
             android:id="@+id/button_details_gatherer"

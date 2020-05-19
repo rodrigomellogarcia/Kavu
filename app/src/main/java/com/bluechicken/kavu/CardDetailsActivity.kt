@@ -8,11 +8,14 @@ import android.util.Log
 import android.view.View
 import android.view.View.GONE
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bluechicken.kavu.carddetails.CardDetailsViewModel
+import com.bluechicken.kavu.utils.StringUtils
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_card_details.*
 import kotlinx.android.synthetic.main.card_list_item.view.*
+import java.net.URLEncoder
 
 class CardDetailsActivity : AppCompatActivity() {
 
@@ -31,8 +34,14 @@ class CardDetailsActivity : AppCompatActivity() {
         bind(cardOnSpotlight);
 
         viewModel = ViewModelProvider(this).get(CardDetailsViewModel::class.java)
-        viewModel
+        viewModel.prices.observe(this, Observer {
+            it?.let {
+                updateLigaPrices(it)
+            }
+        })
         viewModel.getLigaPrices()
+
+        println(URLEncoder.encode(cardOnSpotlight.name))
 
     }
 
@@ -105,5 +114,12 @@ class CardDetailsActivity : AppCompatActivity() {
         }
     }
 
+    fun updateLigaPrices(prices : List<Double?>) {
+        if (prices == null || prices.size < 3)
+            return
+        tv_price_liga_min.text = StringUtils.priceOrNull(prices[0], getString(R.string.NaN))
+        tv_price_liga_avg.text = StringUtils.priceOrNull(prices[1], getString(R.string.NaN))
+        tv_price_liga_max.text = StringUtils.priceOrNull(prices[2], getString(R.string.NaN))
+    }
 
 }
